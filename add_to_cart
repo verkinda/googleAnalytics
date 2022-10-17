@@ -1,0 +1,29 @@
+dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+dataLayer.push({
+  event: "add_to_cart",
+  ecommerce: {
+    items: [
+    {
+      item_id: "SKU_12345", // for Axess, we use Ticket: "T_<pool><tickettype><persontype>"; LinkedArticle: "LA_<artnum>; Article: A_<artnum>"; Rental: "R_<type>_<number>"; Lesson: "L_<id1><id2><id3>"????; Retail: "Ret_<id...>"
+      item_name: "Stan and Friends Tee", // "1 DAY ADULT"
+      affiliation: "Google Merchandise Store", // Always "Axess WEBSHOP"
+      coupon: "SUMMER_FUN", // No coupon in Axess WEBSHOP -> remove this line
+      currency: "USD", // Currency of the WEBSHOP
+      discount: 2.22, // Check if a discount can be applied in Axess WEBSHOP, otherwise -> remove this line
+      index: 0, // No position -> remove this line
+      item_brand: "Google", // No brand -> remove this line
+      item_category: "Apparel", // Product category (optional) 
+      item_category2: "Adult", // Person type (optional)
+      item_category3: "Shirts", // Pool (optional)
+      item_category4: "Crew", // Remove this line
+      item_category5: "Short sleeve", // Remove this line
+      item_list_id: "related_products", // We use: tickets_products for <shop_url>/<lang>/Products/Tickets/; tickets_<category>_products for <shop_url>/<lang>/Products/Tickets/Category?cID=<>; rental_products for <shop_url>/<lang>/Rental#pg<>; lessons_products for <shop_url>/<lang>/LessonsResults/Results?filterId=<>
+      item_list_name: "Related Products", // "Tickets Products"; "Tickets Category Products"; "Rental Products"; "Lessons Products"
+      item_variant: "green", // No variant -> remove this line
+      location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo", // No location -> remove this line
+      price: 9.99,
+      quantity: 1
+    }
+    ]
+  }
+});
