@@ -27,3 +27,29 @@ dataLayer.push({
     ]
   }
 });
+
+
+
+// Particular case for a package
+dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+dataLayer.push({
+  event: "select_item",
+  ecommerce: {
+    items: [
+    {
+      item_id: "SKU_12345", // we use Ticket: "P_<id>"; 
+      item_name: "Stan and Friends Tee", // "FAMILY PACKAGE"
+      affiliation: "Google Merchandise Store", // Always "Axess WEBSHOP"
+      currency: "USD", // Currency of the WEBSHOP
+      discount: 2.22, // Check if a discount can be applied in Axess WEBSHOP, otherwise -> remove this line
+      item_brand: "Google", // No brand -> remove this line
+      item_category: "Apparel", // Product category (optional) 
+      item_list_id: "related_products", // We use: tickets_products for <shop_url>/<lang>/Products/Tickets/; tickets_<category>_products for <shop_url>/<lang>/Products/Tickets/Category?cID=<>; rental_products for <shop_url>/<lang>/Rental#pg<>; lessons_products for <shop_url>/<lang>/LessonsResults/Results?filterId=<>
+      item_list_name: "Related Products", // "Tickets Products"; "Tickets Category Products"; "Rental Products"; "Lessons Products" ; "Package"
+      item_variant: "green", No variant -> remove this line
+      price: 9.99, // Price of the overall package
+      quantity: 1 // Number of packages in the shopping cart
+    }
+    ]
+  }
+});
